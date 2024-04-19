@@ -5,7 +5,7 @@ function App() {
 	return (
 		<div className="App">
 			<h1>Sheeple</h1>
-			{solution && <div>Sheeple solution = {solution}</div>}
+			{solution && <Sheeple solution={solution} />}
 		</div>
 	);
 }
