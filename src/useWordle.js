@@ -6,6 +6,7 @@ const useWordle = (solution) => {
 	const [guesses, setGuesses] = useState([...Array(6)]);
 	const [history, setHistory] = useState([]);
 	const [isCorrect, setIsCorrect] = useState(false);
+	const [usedKeys, setUsedKeys] = useState({});
 
 	const formatGuess = () => {
 		let solutionArray = [...solution];
@@ -31,22 +32,43 @@ const useWordle = (solution) => {
 	};
 
 	const addNewGuess = (formattedGuess) => {
-        if (currentGuess === solution) {
-            setIsCorrect(true);
-        }
-        setGuesses(prevGuesses => {
-            let newGuesses = [...prevGuesses];
-            newGuesses[turn] = formattedGuess;
-            return newGuesses;
-        })
-        setHistory(prevHistory => {
-            return[...prevHistory, currentGuess]
-        })
-        setTurn(prevTurn => {
-            return prevTurn + 1;
-        })
-        setCurrentGuess('')
-    };
+		if (currentGuess === solution) {
+			setIsCorrect(true);
+		}
+		setGuesses((prevGuesses) => {
+			let newGuesses = [...prevGuesses];
+			newGuesses[turn] = formattedGuess;
+			return newGuesses;
+		});
+		setHistory((prevHistory) => {
+			return [...prevHistory, currentGuess];
+		});
+		setTurn((prevTurn) => {
+			return prevTurn + 1;
+		});
+		setUsedKeys((prevUsedKeys) => {
+			formattedGuess.forEach((l) => {
+				const currentColor = prevUsedKeys[l.key];
+
+				if (l.color === "green") {
+					prevUsedKeys[l.key] = "green";
+					return;
+				}
+				if (l.color === "yellow" && currentColor !== "green") {
+					prevUsedKeys[l.key] = "yellow";
+					return;
+				}
+				if (
+					l.color === "gray" &&
+					currentColor !== ("green" || "yellow")
+				) {
+					prevUsedKeys[l.key] = "gray";
+					return;
+				}
+			});
+		});
+		setCurrentGuess("");
+	};
 
 	const handleKeyUp = ({ key }) => {
 		if (key === "Enter") {
@@ -77,7 +99,7 @@ const useWordle = (solution) => {
 		}
 	};
 
-	return { turn, currentGuess, guesses, isCorrect, handleKeyUp };
+	return { turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyUp };
 };
 
 export default useWordle;
