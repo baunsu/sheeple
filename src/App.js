@@ -1,7 +1,7 @@
 import Sheeple from "./Sheeple";
 
 function App() {
-	const solution = "Sheep";
+	const solution = "sheep";
 	return (
 		<div className="App">
 			<h1>Sheeple</h1>

@@ -11,12 +11,12 @@ const useWordle = (solution) => {
 	const formatGuess = () => {
 		let solutionArray = [...solution];
 		let formattedGuess = [...currentGuess].map((l) => {
-			return { key: 1, color: "gray" };
+			return { key: l, color: "gray" };
 		});
 
 		formattedGuess.forEach((l, i) => {
 			if (solution[i] === l.key) {
-				formattedGuess[i] = "green";
+				formattedGuess[i].color = "green";
 				solutionArray[i] = null;
 			}
 		});
@@ -46,6 +46,9 @@ const useWordle = (solution) => {
 		setTurn((prevTurn) => {
 			return prevTurn + 1;
 		});
+
+		// I have no idea why this doesn't work!
+
 		setUsedKeys((prevUsedKeys) => {
 			formattedGuess.forEach((l) => {
 				const currentColor = prevUsedKeys[l.key];
@@ -66,6 +69,7 @@ const useWordle = (solution) => {
 					return;
 				}
 			});
+			return prevUsedKeys;
 		});
 		setCurrentGuess("");
 	};
@@ -82,19 +86,21 @@ const useWordle = (solution) => {
 				return;
 			}
 
-			if (currentGuess.length === 5) {
-				const formatted = formatGuess();
-				addNewGuess(formatted);
-				console.log(formatted);
+			if (currentGuess.length !== 5) {
+				console.log("Word must be 5 chars");
+				return;
 			}
+
+			const formatted = formatGuess();
+			addNewGuess(formatted);
 		}
 		if (key === "Backspace") {
-			setCurrentGuess((prev) => prev.slice(0, -1));
+			setCurrentGuess(currentGuess.slice(0, -1));
 			return;
 		}
 		if (/^[A-Za-z]$/.test(key)) {
 			if (currentGuess.length < 5) {
-				setCurrentGuess((prev) => prev + key);
+				setCurrentGuess(currentGuess + key);
 			}
 		}
 	};
