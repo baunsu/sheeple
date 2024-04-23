@@ -7,6 +7,7 @@ const useWordle = (solution) => {
 	const [history, setHistory] = useState([]);
 	const [isCorrect, setIsCorrect] = useState(false);
 	const [usedKeys, setUsedKeys] = useState({});
+	const wordlist = require("./data/wordlist.json");
 
 	const formatGuess = () => {
 		let solutionArray = [...solution];
@@ -89,6 +90,11 @@ const useWordle = (solution) => {
 				return;
 			}
 
+			if (!wordlist.words.includes(currentGuess)) {
+				console.log("Invalid word.");
+				return;
+			}
+
 			const formatted = formatGuess();
 			addNewGuess(formatted);
 		}
@@ -98,7 +104,7 @@ const useWordle = (solution) => {
 		}
 		if (/^[A-Za-z]$/.test(key)) {
 			if (currentGuess.length < 5) {
-				setCurrentGuess(currentGuess + key);
+				setCurrentGuess((currentGuess + key).toLocaleLowerCase());
 			}
 		}
 	};
