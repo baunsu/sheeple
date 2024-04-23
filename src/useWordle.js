@@ -47,8 +47,6 @@ const useWordle = (solution) => {
 			return prevTurn + 1;
 		});
 
-		// I have no idea why this doesn't work!
-
 		setUsedKeys((prevUsedKeys) => {
 			formattedGuess.forEach((l) => {
 				const currentColor = prevUsedKeys[l.key];

@@ -32,16 +32,16 @@ h1 {
 }
 
 .row > div.green {
-	background: #5ac85a;
-	border-color: #5ac85a;
+	background: #53df6e;
+	border-color: #53df6e;
 }
 .row > div.gray {
-	background: #a1a1a1;
-	border-color: #a1a1a1;
+	background: #717171;
+	border-color: #717171;
 }
 .row > div.yellow {
-	background: #e2cc68;
-	border-color: #e2cc68;
+	background: #e2ff6f;
+	border-color: #e2ff6f;
 }
 
 .keypad {
@@ -59,17 +59,17 @@ h1 {
 }
 
 .keypad > div.green {
-	background: #5ac85a;
+	background: #53df6e;
 	color: #fff;
 	transition: all 0.3s ease-in;
 }
 .keypad > div.yellow {
-	background: #e2cc68;
-	color: #fff;
+	background: #e2ff6f;
+	color: #000;
 	transition: all 0.3s ease-in;
 }
 .keypad > div.gray {
-	background: #a1a1a1;
+	background: #717171;
 	color: #fff;
 	transition: all 0.3s ease-in;
 }

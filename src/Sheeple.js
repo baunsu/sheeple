@@ -18,7 +18,7 @@ const Sheeple = ({ solution }) => {
 			window.removeEventListener("keyup", handleKeyUp);
 		}
 		if (turn > 5) {
-			setTimeout(() => setShowModal(false), 2000);
+			setTimeout(() => setShowModal(true), 2000);
 			window.removeEventListener("keyup", handleKeyUp);
 		}
 		return () => window.removeEventListener("keyup", handleKeyUp);

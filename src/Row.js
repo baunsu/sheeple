@@ -19,7 +19,7 @@ const Row = ({ guess, currentGuess }) => {
 		return (
 			<div className="row current">
 				{letters.map((letter, i) => (
-					<div key={i} class="filled">
+					<div key={i} className="filled">
 						{letter}
 					</div>
 				))}

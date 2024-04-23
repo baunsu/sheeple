@@ -11,7 +11,8 @@ const Modal = ({ isCorrect, solution, turn }) => {
 			{!isCorrect && (
 				<div>
 					<h1>Unlucky!</h1>
-					<p className="solution">The word was {solution}</p>
+					<p className="solution">{solution}</p>
+					<p>Better luck next time!</p>
 				</div>
 			)}
 		</div>
