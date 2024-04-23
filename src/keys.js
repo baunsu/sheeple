@@ -1,5 +1,5 @@
 const keys = [
-	{ key: "a" },
+	{ key: "A" },
 	{ key: "b" },
 	{ key: "c" },
 	{ key: "d" },
