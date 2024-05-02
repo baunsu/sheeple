@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sheeple/static/css/main.f80764c4.css",
+    "main.js": "/sheeple/static/js/main.32a2a7fb.js",
+    "index.html": "/sheeple/index.html",
+    "main.f80764c4.css.map": "/sheeple/static/css/main.f80764c4.css.map",
+    "main.32a2a7fb.js.map": "/sheeple/static/js/main.32a2a7fb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f80764c4.css",
+    "static/js/main.32a2a7fb.js"
+  ]
+}
