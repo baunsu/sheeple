@@ -1,3 +1,5 @@
+import baachipls from "./baachipls.gif";
+
 const Modal = ({ isCorrect, solution, turn }) => {
 	return (
 		<div className="modal">
@@ -6,6 +8,7 @@ const Modal = ({ isCorrect, solution, turn }) => {
 					<h1>You Win!</h1>
 					<p className="solution">{solution}</p>
 					<p>You took {turn} guesses.</p>
+					<img src={baachipls} alt="baachipls" />
 				</div>
 			)}
 			{!isCorrect && (
