@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/sheeple/static/css/main.f80764c4.css",
-    "main.js": "/sheeple/static/js/main.32a2a7fb.js",
+    "main.js": "/sheeple/static/js/main.bdbde14a.js",
+    "static/media/baachipls.gif": "/sheeple/static/media/baachipls.92105ec0c50000175f46.gif",
     "index.html": "/sheeple/index.html",
     "main.f80764c4.css.map": "/sheeple/static/css/main.f80764c4.css.map",
-    "main.32a2a7fb.js.map": "/sheeple/static/js/main.32a2a7fb.js.map"
+    "main.bdbde14a.js.map": "/sheeple/static/js/main.bdbde14a.js.map"
   },
   "entrypoints": [
     "static/css/main.f80764c4.css",
-    "static/js/main.32a2a7fb.js"
+    "static/js/main.bdbde14a.js"
   ]
 }
